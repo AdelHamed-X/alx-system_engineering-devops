@@ -5,3 +5,5 @@ File #03 changes to a new owner
 File #04 creates an empty file called hello
 File #05 adds execute permissioin to the owner of the file hello
 File #06 adds multiple permissions to user, group and other.
+File #07 adds multiple permissions to user, group and other.
+File #08 adds multiple permissions to user, group and other.
