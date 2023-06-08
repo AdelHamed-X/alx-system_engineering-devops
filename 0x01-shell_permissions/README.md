@@ -7,4 +7,8 @@ File #05 adds execute permissioin to the owner of the file hello
 File #06 adds multiple permissions to user, group and other.
 File #07 adds multiple permissions to user, group and other.
 File #08 adds multiple permissions to user, group and other.
-File #09 adds multiple permissions to user, group and other. 
+File #09 adds multiple permissions to user, group and other.
+File #10 copies the same mode of another file
+File #11 adds permission to all subdirectories Recrusively
+File #12 creates new directory with certain permissions
+File #13 changes the group owner of a file 
