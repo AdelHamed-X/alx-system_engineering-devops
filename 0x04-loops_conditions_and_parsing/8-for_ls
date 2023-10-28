@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# This script shows a list of a directory content
+
+list="$(ls)"
+for cmd in $list; do
+	echo "$cmd" | cut -d '-' -f1,2
+done
