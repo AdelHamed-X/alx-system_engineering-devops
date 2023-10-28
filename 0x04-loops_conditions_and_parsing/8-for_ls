@@ -3,5 +3,5 @@
 
 list="$(ls)"
 for cmd in $list; do
-	echo "$cmd" | cut -d '-' -f1,2
+	echo "$cmd" | cut -d '-' -f2
 done
