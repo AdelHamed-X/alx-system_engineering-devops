@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# This script allowed me to paractice the read command
+
+filename="/etc/passwd"
+while IFS="_:" read -r line; do
+	line="${line#_}"
+	IFS=":" read -r -a array <<< "$line"
+	echo "${array[0]}:${array[2]}:${array[6]}"
+done < $filename
