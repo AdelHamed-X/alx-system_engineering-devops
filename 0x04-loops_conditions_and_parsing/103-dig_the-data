@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 # This script digs the data in apache log access files
 
-awk '{print FR,$1 " " $9}' "./apache-access.log" | uniq -c | sort -r
+awk '{print FR,$1 " " $9}' "./apache-access.log" | uniq -c | sort -nr
