@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# This script filters the running processes by name
+# shellcheck disable=SC2009
+
+ps -C bash -f
