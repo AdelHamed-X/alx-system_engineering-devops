@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+# this script is doing too much stuff
+
+echo $$ > /var/run/myscript.pid
+
+trap 'rm /var/run/myscript.pid; echo "I hate the kill command"; exit' SIGTERM
+
+trap 'rm /var/run/myscript.pid; exit' SIGQUIT
+
+trap 'echo "Y U no love me?!"; exit' SIGINT
+
+while true; do
+	echo "To infinity and beyond"
+done
