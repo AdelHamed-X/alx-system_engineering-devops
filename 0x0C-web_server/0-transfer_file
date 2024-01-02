@@ -14,3 +14,4 @@ then
     scp -o StrictHostKeyChecking=no -i "$ssh_path" "$file_path" "$server_username@$server_ip:/~"
 else
     scp -o StrictHostKeyChecking=no "$file_path" "$server_username@$server_ip:/~"
+fi
