@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 # A Bash script that configures a new Ubuntu machine to respect requirements.
 rm /var/www/html/*
-echo "Hello World!">/var/www/html/index.html
+echo "Hello World!">/var/www/html/index.htm
