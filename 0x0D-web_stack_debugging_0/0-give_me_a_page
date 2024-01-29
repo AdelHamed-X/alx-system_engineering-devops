@@ -1,6 +1,4 @@
 #!/usr/bin/env bash
 # script that gets Apache to run on the container and to return a page containing Hello Holberton when querying the root of it
-docker run -it holbertonschool/265-0
-apt-get update
-apt-get -y install apache2
+
 service apache2 restart
