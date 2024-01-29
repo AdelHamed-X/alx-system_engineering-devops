@@ -10,5 +10,14 @@ service nginx start
 rm /var/www/html/*
 echo "Hello World!">/var/www/html/index.html
 
-sed "i server_name domain.com;\nrewrite ^/(.*)$ https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;" "/redirect_me"
+echo "
+server {
+    listen 80 default_server;
+    listen [::]:80 default_server;
+    server_name domain.com;
+
+    location /redirect_me {
+        return 301 https://www.youtube.com/watch?v=QH2-TGUlwu4;
+    }}" > /etc/nginx/sites-available/redirect_me
+ln -s /etc/nginx/sites-available/redirect_me /etc/nginx/sites-enabled/
 service nginx start
