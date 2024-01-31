@@ -1,11 +1,16 @@
 #!/usr/bin/env bash
 # Script that configures a new Ubuntu machine to respect above requirements
 
-sudo apt-get update
-sudo apt-get install -y nginx
+#!/usr/bin/env bash
+# A Bash script that configures a new Ubuntu machine to respect requirements.
 
-echo "Hello World!" | sudo tee /var/www/html/index.html
+sudo su
+apt-get -y update
+apt-get -y install nginx
+ufw allow 'Nginx HTTP'
+echo 'Hello World!' > /var/www/html/index.nginx-debian.html
+
 string_for_replacement="server_name _;\n\trewrite ^\/redirect_me https:\/\/www.youtube.com\/watch?v=QH2-TGUlwu4 permanent;"
 sudo sed -i "s/server_name _;/$string_for_replacement/" /etc/nginx/sites-enabled/default
 
-sudo service nginx restart
+service nginx restart
