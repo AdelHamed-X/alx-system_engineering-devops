@@ -1,6 +1,4 @@
 #!/usr/bin/env bash
 # Debugging task number 1 on connection failed to port 80
-
-rm /etc/nginx/sites-enabled/default
-sudo ln -s /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
+sudo sed -i 's/8080/80/g' /etc/nginx/sites-enabled/default
 sudo service nginx restart
