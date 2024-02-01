@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+# A script that configures a new Ubuntu machine to respect above requirements
+
+apt-get -y update
+text_to_replace="
+backend web_backend
+  mode http
+  balance roundrobin
+  server 417777-web-01 54.174.144.6:80 check
+  server 417777-web-02 34.229.137.175:80 check
+"
+echo "ENABLED=1" >  /etc/default/haproxy
+echo "$text_to_replace" > /etc/haproxy/haproxy.cfg
