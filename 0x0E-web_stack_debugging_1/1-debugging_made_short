@@ -2,4 +2,4 @@
 # Debugging task number 2 on connection failed to port 80
 sudo ln -s --force /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
 sudo service nginx restart
-sudo service nginx stop
+sudo pkill -o nginx
