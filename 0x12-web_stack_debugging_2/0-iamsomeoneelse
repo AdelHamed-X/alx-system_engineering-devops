@@ -2,5 +2,5 @@
 # A script to run commands on another user
 
 if [[ $# -gt 0 ]]; then
-    su - "$1" -c "whoami"
+    su "$1" -c "whoami"
 fi
