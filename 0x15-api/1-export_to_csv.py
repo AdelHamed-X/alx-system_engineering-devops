@@ -10,7 +10,7 @@ if __name__ == '__main__':
     filename = '{}.csv'.format(user_id)
 
     username = requests.get('https://jsonplaceholder.typicode.com/users/{}'
-                             .format(user_id)).json().get('name')
+                            .format(user_id)).json().get('name')
     tasks = requests.get('https://jsonplaceholder.typicode.com/todos/',
                          params={'userId': '{}'.format(user_id)}).json()
 
