@@ -6,7 +6,7 @@ import requests
 from sys import argv
 
 if __name__ == '__main__':
-    user_id = 2
+    user_id = argv[1]
     filename = '{}.csv'.format(user_id)
 
     username = requests.get('https://jsonplaceholder.typicode.com/users/{}'
@@ -20,3 +20,5 @@ if __name__ == '__main__':
     for task in tasks:
         csv_writer.writerow(["{}".format(user_id), username,
                              task['completed'], task['title']])
+    
+    csv_file.close()
