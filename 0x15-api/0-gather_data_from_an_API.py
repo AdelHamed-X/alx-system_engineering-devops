@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """ A Python script that returns todo list info for a given employee ID """
-from sys import argv
 import requests
+from sys import argv
 
 if __name__ == 'main':
     user_info = requests.get('https://jsonplaceholder.typicode.com/users/{}'
