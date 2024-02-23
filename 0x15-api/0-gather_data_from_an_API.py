@@ -3,7 +3,7 @@
 import requests
 from sys import argv
 
-if __name__ == 'main':
+if __name__ == '__main__':
     user_info = requests.get('https://jsonplaceholder.typicode.com/users/{}'
                              .format(argv[1])).json()
     tasks = requests.get('https://jsonplaceholder.typicode.com/todos/',
