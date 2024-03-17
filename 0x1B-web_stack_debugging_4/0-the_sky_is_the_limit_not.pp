@@ -1,12 +1,11 @@
-# A script that modifies the server to accept more requests
-
-exec { 'A' :
-    command: 'sed -i 's/ULIMIT=\"-n 15\"/ULIMIT=\"-n 4096\"/',
-    provider: 'shell',
-    before: 'B',
+# Handling high amount of requsts
+exec {'replace':
+  provider => shell,
+  command  => 'sudo sed -i "s/ULIMIT=\"-n 15\"/ULIMIT=\"-n 4096\"/" /etc/default/nginx',
+  before   => Exec['restart'],
 }
 
-exec { 'B' :
-    command: 'sevice nginx restart',
-    provider: 'shell',
+exec {'restart':
+  provider => shell,
+  command  => 'sudo service nginx restart',
 }
